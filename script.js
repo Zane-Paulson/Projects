@@ -38,17 +38,41 @@ class Minesweeper {
     // generates 8 mines
     populateMines() {
         // randomly generate 2 numbers (x, y) between 1 and 8, 8 times
-        // get row y
-        // get column x (in row y)
-        // add "mine" to classList
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+        for (let i = 0; i < 8; i++) {
+            const x = getRandomInt(1, 9);
+            const y = getRandomInt(1, 9);
+            // get row x
+            let mineSpace = document.querySelector(`[data-row="${x}"]`);
+            // get column y (in row x)
+            mineSpace = mineSpace.querySelector(`[data-column="${y}"]`);
+            // add "mine" to classList
+            mineSpace.classList.add("mine");
+            mineSpace.textContent = "\u{1F6A9}";
+        }
     }
 
     // left clicking elements
     leftClickGrid(e) {
-        if (!e.target.classList.contains("grid-item")) return;
-        console.log(e.target);
-        // check if square has mine
-        // transform contents to num of mines surrounding
+        if (!e.target.classList.contains("grid-item")) {
+            return;
+        }
+
+        console.log(e.target, e.target.closest(".grid-row"));
+
+        // fade out
+        e.target.classList.toggle("clicked");
+        e.target.classList.toggle("fade-out");
+
+        // TODO check if square has mine
+        if (e.target.classList.contains("mine")) {
+            document.querySelector(".gameover").classList.remove("hidden");
+        }
+        // TODO transform contents to num of mines surrounding
     }
 }
 

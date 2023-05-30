@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 12%;
 }
 
 .grid-row {
@@ -11,7 +12,42 @@
 .grid-item {
     width: 50px; /* Adjust the width as per your requirement */
     height: 50px; /* Adjust the height as per your requirement */
-    background-color: #ccc;
-    border: 1px solid #999;
+    background-color: #aaaaaa;
+    border: 1px solid #747474;
     box-sizing: border-box;
+}
+
+.gameover {
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.gameover-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+}
+
+.clicked {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+.clicked.fade-out {
+    opacity: 0.5;
+}
+
+.mine {
+    background-color: rgb(255, 84, 84);
+    text-align: center;
+    padding-top: 10px;
 }
