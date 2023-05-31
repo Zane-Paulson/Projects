@@ -1,9 +1,10 @@
 "use strict";
 class Minesweeper {
     gridContainer = document.querySelector(".grid-container");
-
+    mineList = [];
     constructor() {
         this.init();
+
         this.gridContainer.addEventListener(
             "click",
             this.leftClickGrid.bind(this)
@@ -11,7 +12,7 @@ class Minesweeper {
     }
 
     init() {
-        this.userInterface();
+        this.gridContainer.innerHTML = "";
         this.createGrid(8);
         this.populateMines();
     }
@@ -30,6 +31,7 @@ class Minesweeper {
                 let grid = document.createElement("div");
                 grid.classList.add("grid-item");
                 grid.dataset.column = `${j + 1}`;
+                grid.dataset.coords = `${i + 1},${j + 1}`;
                 row.insertAdjacentElement("beforeend", grid);
             }
         }
@@ -53,6 +55,8 @@ class Minesweeper {
             // add "mine" to classList
             mineSpace.classList.add("mine");
             mineSpace.textContent = "\u{1F6A9}";
+            this.mineList.push(mineSpace);
+            console.log(this.mineList);
         }
     }
 
@@ -70,9 +74,22 @@ class Minesweeper {
 
         // TODO check if square has mine
         if (e.target.classList.contains("mine")) {
-            document.querySelector(".gameover").classList.remove("hidden");
+            const gameover = document.querySelector(".gameover-modal");
+            gameover.classList.remove("hidden");
+            gameover.addEventListener("click", this.gameover.bind(this));
         }
-        // TODO transform contents to num of mines surrounding
+    }
+
+    gridLogic() {
+        // flag square
+    }
+
+    gameover(e) {
+        if (!e.target.classList.contains("btn__gameover")) return;
+
+        gameover.classList.add("hidden");
+
+        this.init();
     }
 }
 

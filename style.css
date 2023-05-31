@@ -17,8 +17,7 @@
     box-sizing: border-box;
 }
 
-.gameover {
-    /* display: none; */
+.gameover-modal {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -50,4 +49,8 @@
     background-color: rgb(255, 84, 84);
     text-align: center;
     padding-top: 10px;
+}
+
+.hidden {
+    display: none;
 }
