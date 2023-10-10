@@ -1,5 +1,15 @@
 # Minesweeper App
 
+```
+reveal x, y
+focus = square at x, y
+
+if focus at x, y has no nearby mines
+check each neighbor of the focus
+if a neighbor has no nearby mines
+reveal neighbor (recurse!)
+```
+
 ## Project Setup:
 
 -   Set up a new project folder.

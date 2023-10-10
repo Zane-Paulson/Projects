@@ -1,56 +1,37 @@
-.grid-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 12%;
-}
+.z-high {
+  z-index: 999; }
 
-.grid-row {
-    display: flex;
-}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
 
-.grid-item {
-    width: 50px; /* Adjust the width as per your requirement */
-    height: 50px; /* Adjust the height as per your requirement */
-    background-color: #aaaaaa;
-    border: 1px solid #747474;
-    box-sizing: border-box;
-}
+html {
+  font-size: 62.5%; }
 
-.gameover-modal {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-}
+body {
+  background-color: #bbbbbb; }
 
-.gameover-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
-    text-align: center;
-}
+/* Add some CSS styling for the grid cells */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  margin: 0 auto;
+  width: fit-content; }
 
-.clicked {
-    opacity: 1;
-    transition: opacity 0.5s ease;
-}
-.clicked.fade-out {
-    opacity: 0.5;
-}
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #87a330;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #a1c349; }
 
-.mine {
-    background-color: rgb(255, 84, 84);
-    text-align: center;
-    padding-top: 10px;
-}
-
-.hidden {
-    display: none;
-}
+/* Add some styling for hover effect (optional) */
+.cell:hover {
+  background-color: #87a330; }

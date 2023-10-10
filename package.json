@@ -1,0 +1,14 @@
+{
+  "author": "",
+  "dependencies": {
+    "node-sass": "^9.0.0"
+  },
+  "description": "-   Set up a new project folder.",
+  "license": "ISC",
+  "main": "script.js",
+  "name": "minesweeper",
+  "scripts": {
+    "watch:sass": "node-sass main.scss style.css -w"
+  },
+  "version": "1.0.0"
+}

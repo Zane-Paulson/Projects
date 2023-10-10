@@ -1,0 +1,68 @@
+$color-light-green: #a1c349;
+$color-dark-green: #87a330;
+
+$color-light-brown: #ead8ae;
+$color-dark-brown: #c4b081;
+
+$color-red: #d65757;
+
+$color-light-grey: #bbbbbb;
+$color-dark-grey: #7a7a7a;
+
+// HELPERS
+.z-high {
+    z-index: 999;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: $color-light-grey;
+}
+
+// .main {
+//     background-color: #ead8ae;
+//     position: absolute;
+//     top: 50%;
+//     right: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+
+//     height: 75vh;
+//     width: 75vw;
+// }
+
+/* Add some CSS styling for the grid cells */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid $color-dark-green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: $color-light-green;
+}
+
+/* Add some styling for hover effect (optional) */
+.cell:hover {
+    background-color: $color-dark-green;
+}
